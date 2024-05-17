@@ -4,22 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image to SVG Converter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="hero">
     <div class="stars"></div>
     <div class="container">
-      <h1>Image to SVG Converter</h1>
+      <h1><i class="fas fa-image"></i> Image to SVG Converter</h1>
       <div class="input-container">
-        <label for="imageInput">Select an image:</label>
-        <input type="file" id="imageInput" accept="image/*">
+        <label for="imageInput" class="file-input">
+          <i class="fas fa-upload"></i> Select an image
+          <input type="file" id="imageInput" accept="image/*">
+        </label>
       </div>
       <div class="preview-container">
         <canvas id="svgCanvas"></canvas>
       </div>
       <div class="output-container">
-        <a id="downloadBtn" class="button" href="#" download="image.svg" style="display: none;">Download SVG</a>
+        <a id="downloadBtn" class="button" href="#" download="image.svg" style="display: none;"><i class="fas fa-download"></i> Download SVG</a>
       </div>
     </div>
   </div>

@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000; /* Dark background */
-  overflow: hidden; /* Hide the overflow to prevent scrollbars */
+  background-color: #000;
+  overflow: hidden;
 }
 
 .hero {
@@ -30,16 +32,14 @@ body {
 }
 
 @keyframes move-stars {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100%);
-  }
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
 }
 
 .stars::before, .stars::after {
   content: '';
+  background-size: 50px 50px;
+  background-position: 0 0;
   position: absolute;
   top: 0;
   left: 50%;
@@ -52,32 +52,49 @@ body {
 }
 
 .stars::before {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.8) 2px, transparent 2px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 2px, transparent 2px);
   animation: move-stars 50s linear infinite;
 }
 
 .stars::after {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
   animation: move-stars 100s linear infinite;
 }
 
 .container {
   position: relative;
-  background-color: #222; /* Dark container background */
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: rgba(34, 34, 34, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   text-align: center;
-  z-index: 1; /* Ensure it's above the stars */
+  z-index: 1;
   color: white;
+  backdrop-filter: blur(10px);
 }
 
 h1 {
   margin-top: 0;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-#imageInput {
-  margin-bottom: 10px;
+.file-input {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-input:hover {
+  background-color: #313131;
+}
+
+.file-input input[type="file"] {
+  display: none;
 }
 
 #svgCanvas {
@@ -86,19 +103,24 @@ h1 {
   height: 300px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-#downloadBtn {
-  padding: 8px 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-#downloadBtn:disabled {
+.button:hover {
+  background-color: #797979;
+}
+
+.button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
